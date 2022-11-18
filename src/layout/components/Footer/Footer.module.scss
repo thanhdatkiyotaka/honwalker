@@ -2,18 +2,24 @@
    background: rgb(0 0 0 /6%);
    display: flex;
    justify-content: center;
+   padding-top: 20px;
 }
 
 .inner {
     background: white;
     width: 1200px;
     font-size: 20px;
+    border-radius: 5px;
+    padding: 20px 10px;
 }
 
 .company-info{
     display: flex;
     flex-direction: column;
+    border-right: solid 1px black;
 }
+
+
 
 .policy{
     display: flex;
