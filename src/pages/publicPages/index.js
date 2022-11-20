@@ -4,3 +4,6 @@ export {default as Order} from './Order';
 export {default as Product} from './Product';
 export {default as Profile} from './Profile';
 export {default as Login} from './Login';
+export {default as ListProduct} from './ListProduct';
+export {default as Payment} from './Payment';
+export {default as HistoryOrder} from './HistoryOrder';

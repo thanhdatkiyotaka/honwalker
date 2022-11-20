@@ -1,4 +1,4 @@
-import {Cart, Home, Order, Product, Profile, Login} from '~/pages/publicPages';
+import {Cart, Home, Order, Product, Profile, Login, Payment, ListProduct, HistoryOrder} from '~/pages/publicPages';
 import {AdminHome, Finance, AdminListOrder, AdminOrder, AdminProfile} from '~/pages/privatePages';
 
 
@@ -9,6 +9,9 @@ var publicRoutes = [
     {path: '/product', component: Product},
     {path: 'profile', component: Profile},
     {path: 'order', component: Order},
+    {path: '/payment', component: Payment},
+    {path: '/list-product', component: ListProduct},
+    {path: 'history-order', component: HistoryOrder},
     {path: 'login', component: Login, layout: 'no'}
 ]
 
