@@ -1,3 +1,5 @@
+/* Trang home của website */
+
 import className from 'classnames/bind';
 import style from './Home.module.scss';
 var cx = className.bind(style)

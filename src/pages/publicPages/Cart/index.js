@@ -1,3 +1,5 @@
+/* Trang hiển thị giỏ hàng */
+
 import className from 'classnames/bind';
 import style from './Cart.module.scss';
 var cx = className.bind(style)

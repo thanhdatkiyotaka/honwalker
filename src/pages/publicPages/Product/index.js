@@ -1,3 +1,5 @@
+/* Trang hiển thị cụ thể một sản phẩm */
+
 import '~/assets/css/grid.css'
 import className from 'classnames/bind';
 import style from './Product.module.scss';

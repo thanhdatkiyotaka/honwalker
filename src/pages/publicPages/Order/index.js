@@ -1,3 +1,5 @@
+/* Trang hiển thị tình trạng của một đơn hàng*/
+
 import className from 'classnames/bind';
 import style from './Order.module.scss';
 var cx = className.bind(style)

@@ -1,3 +1,5 @@
+/* Trang hiển thị lịch sử mua hàng */
+
 import className from 'classnames/bind';
 import style from './HistoryOrder.module.scss';
 var cx = className.bind(style)

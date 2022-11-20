@@ -1,3 +1,6 @@
+/* Trang home của phần admin */
+
+
 import className from 'classnames/bind';
 import style from './AdminHome.module.scss'
 var cx = className.bind(style)

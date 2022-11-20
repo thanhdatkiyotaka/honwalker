@@ -1,3 +1,6 @@
+/* Trang hiển thị thông tin người dùng */
+
+
 import className from 'classnames/bind';
 import style from './Profile.module.scss';
 var cx = className.bind(style)
