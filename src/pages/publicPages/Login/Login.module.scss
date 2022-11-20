@@ -1,0 +1,81 @@
+.wrapper {
+    background-image: linear-gradient(to right, rgb(102, 204, 204), rgb(255,51,255));
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.inner{
+    background: white;
+    height: 400px;
+    padding: 30px 30px 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+button, input{
+    border: none;
+    outline: none;
+}
+
+label {
+    color: rgb(0 0 0 /90%);
+
+}
+
+form div {
+    border-bottom: solid 1px rgb(0 0 0 /20%);
+    padding: 0px 5px 5px;
+    margin-bottom: 20px;
+    button {
+        color: rgb(0 0 0 / 20%)
+    }
+    input {
+        color: rgb(0 0 0 /40%);
+        padding: 5px;
+        font-size: 14px;
+        &::placeholder {
+            color: rgb(0 0 0 / 20%);
+        }
+    }
+}
+
+.sign-btn{
+    background-image: linear-gradient(to right, rgb(102, 204, 204), rgb(255,51,255));
+    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    color: white;
+    font-weight: 600;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.sign-up {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    span {
+        text-align: center;
+    }
+    button {
+        padding: 5px;
+        font-size: 16px;
+        color: #0099ff;
+        &:hover {
+            cursor: pointer;
+            color: blue;
+        }
+    }
+}

@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import {Link} from 'react-router-dom';
+import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faSearch, faCircleXmark, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import className from 'classnames/bind';
@@ -39,7 +41,7 @@ function Header() {
                     </button>:
                     <div className={cx('user-info')}>
                         <img alt='' src={require('~/assets/images/Elaina_04.jpg')}/>
-                        <span>Name</span>
+                        <span>Majo Elaina</span>
                     </div>}
                 </div>
             </div>

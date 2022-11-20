@@ -1,0 +1,15 @@
+.wrapper {
+    padding: 10px;
+    background: blue;
+    height: calc(100vh - 60px);
+    margin-left: -10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+}
