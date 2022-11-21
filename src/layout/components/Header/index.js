@@ -1,21 +1,33 @@
 /* eslint-disable no-unused-vars */
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '~/App';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {UserPopper, LoginPopper, MenuPopper} from '~/component/popper';
 import { faBars, faSearch, faCircleXmark, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import className from 'classnames/bind';
-import style from './Header.module.scss'
+import style from './Header.module.scss';
+
 var cx = className.bind(style)
 
 function Header() {
-    var isLogin = false
+    const userStatus = useContext(UserContext);
     return (  
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('menu-logo')}>
-                    <button className={cx('menu')}>
-                        <FontAwesomeIcon icon={faBars}/>
-                    </button>
+                    <Tippy
+                    interactive={true}
+                    render={attrs => (
+                        <div className="box" tabIndex="-1" {...attrs}>
+                            <MenuPopper/>
+                        </div>
+                    )}>
+                        <button className={cx('menu')}>
+                            <FontAwesomeIcon icon={faBars}/>
+                        </button>
+                    </Tippy>
                     <Link to='/' className={cx('logo')}>
                         <img src={require('~/assets/images/logo.png')} alt='logo'/>
                     </Link>
@@ -35,14 +47,30 @@ function Header() {
                         <FontAwesomeIcon icon={faCartShopping}/>
                         <span>0</span>
                     </button>
-                    {isLogin?
-                    <button className={cx('user-btn')}>
-                        <FontAwesomeIcon icon={faUser}/>
-                    </button>:
-                    <div className={cx('user-info')}>
-                        <img alt='' src={require('~/assets/images/Elaina_04.jpg')}/>
-                        <span>Majo Elaina</span>
-                    </div>}
+                    {userStatus.isLogin?
+                    <Tippy
+                    interactive={true}
+                    render={attrs => (
+                        <div className="box" tabIndex="-1" {...attrs}>
+                            <LoginPopper/>
+                        </div>
+                    )}>
+                        <button className={cx('user-btn')}>
+                            <FontAwesomeIcon icon={faUser}/>
+                        </button>
+                    </Tippy>:
+                    <Tippy
+                    interactive={true}
+                    render={attrs => (
+                        <div className="box" tabIndex="-1" {...attrs}>
+                            <UserPopper/>
+                        </div>
+                    )}>
+                        <div className={cx('user-info')}>
+                            <img alt='' src={require('~/assets/images/Elaina_04.jpg')}/>
+                            <span>Majo Elaina</span>
+                        </div>
+                    </Tippy>}
                 </div>
             </div>
         </header>

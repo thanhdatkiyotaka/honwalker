@@ -6,9 +6,13 @@ import style from './Login.module.scss';
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 var cx = className.bind(style)
 
-function Login({isLogin}) {
-    const [haveAccount, setAccount] = useState(true);
+function Login() {
+    const [loginActive, setLogin] = useState(true);
+    const [signActive, setSign] = useState(false);
+
     let navigate = useNavigate();
+    const loginClass = cx({loginActive})
+    const signClass = cx({signActive})
     const handleLogin = () => {
         navigate('/');
     }
@@ -19,8 +23,11 @@ function Login({isLogin}) {
     return (  
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <h1>Login</h1>
-                {haveAccount?
+                <div className={cx('title')}>
+                    <button onClick={()=>{setLogin(true); setSign(false)}} className={loginClass}>Login</button>
+                    <button onClick={()=>{setLogin(false); setSign(true)}} className={signClass}>Sign in</button>
+                </div>
+                {loginActive?
                 (<div>
                    <form>
                         <label>Username</label>
@@ -39,10 +46,6 @@ function Login({isLogin}) {
                         </div>
                         <button className={cx('sign-btn')} onClick={handleLogin}>LOGIN</button>
                     </form>
-                    <div className={cx('sign-up')}>
-                        <span>Don't have account?</span>
-                        <button onClick={() => setAccount(false)}>Sign up</button>
-                    </div>
                 </div>):
                 (<div>
                     <form>

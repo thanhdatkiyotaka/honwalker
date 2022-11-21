@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
 import {useState} from 'react'
 import Tippy from '@tippyjs/react/headless';
@@ -9,20 +10,23 @@ import NavPopper from '~/component/popper/NavPopper';
 var cx = className.bind(style)
 
 function Navbar() {
+    const [navmobileShown, setShown] = useState(false);
     return (  
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('menu-logo')}>
                 <Tippy
                     interactive={true}
-                   
+                    
+                    visible={navmobileShown}
+                    onClickOutside={()=>setShown(false)}
                     render={attrs => (
                         <div className="box" tabIndex="-1" {...attrs}>
-                            <NavPopper/>
+                            <NavPopper onClick={()=>setShown(false)}/>
                         </div>
                     )}
                     >
-                        <button className={cx('menu')}>
+                        <button className={cx('menu')} onClick={()=>setShown(!navmobileShown)}>
                             <FontAwesomeIcon icon={faBars}/>
                         </button>
                     </Tippy>
