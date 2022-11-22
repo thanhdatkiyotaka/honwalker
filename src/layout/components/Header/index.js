@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '~/App';
 import Search from '../Search';
-import MenuPopup from '../MenuPopup';
-import CartPopup from '../CartPopup';
-import NonUserPopup from '../NonUserPopup';
-import UserPopup from '../UserPopup';
+import Menu from '../Menu';
+import Cart from '../Cart';
+import NonUser from '../NonUser';
+import User from '../User';
 import className from 'classnames/bind';
 import style from './Header.module.scss';
 
@@ -17,18 +17,23 @@ function Header() {
     return (  
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('menu-logo')}>
-                    <MenuPopup/>
-                    <Link to='/' className={cx('logo')}>
-                        <img src={require('~/assets/images/logo.png')} alt='logo'/>
-                    </Link>
-                </div> 
-                <Search/>
-                <div className={cx('option')}>
-                    <CartPopup/>
-                    {!userStatus.isLogin?
-                    <NonUserPopup/>:
-                    <UserPopup/>}
+                <Link to='/' className={cx('mobile-logo')}>
+                    <img src={require('~/assets/images/logo.png')} alt='logo'/>
+                </Link>
+                <div className={cx('long-header')}>
+                    <div className={cx('menu-logo')}>
+                        <Menu/>
+                        <Link to='/' className={cx('logo')}>
+                            <img src={require('~/assets/images/logo.png')} alt='logo'/>
+                        </Link>
+                    </div> 
+                    <Search/>
+                    <div className={cx('option')}>
+                        <Cart/>
+                        {!userStatus.isLogin?
+                        <NonUser/>:
+                        <User/>}
+                    </div>
                 </div>
             </div>
         </header>

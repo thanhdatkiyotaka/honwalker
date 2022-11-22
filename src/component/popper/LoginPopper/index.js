@@ -7,11 +7,11 @@ const cx = className.bind(style);
 function LoginPopper() {
     return (  
         <div className={cx('wrapper')}>
-            <Link>
+            <Link to='/login' className={cx('link')}>
                 <button className={cx('login')}>Login</button>
             </Link>
             
-            <Link to='/login'>
+            <Link to='/login' className={cx('link')}>
                 <button className={cx('signin')}>Sign in</button>
             </Link>
 

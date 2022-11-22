@@ -1,0 +1,44 @@
+.wrapper {
+    width: 150px;
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 30%);
+    display: flex;
+    flex-direction: column;
+    z-index: 1 ;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 10px;
+    background: white;
+    button {
+        display: flex;
+        justify-content: center;
+        padding: 5px 25px;
+        width: 130px;
+        border-radius: 15px;
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
+}
+
+.link {
+    text-decoration: none;
+}
+
+.login {
+    background: red;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border: 3px solid red;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.signin {
+    background: white;
+    color: red;
+    border: 3px solid red;
+    font-weight: 600;
+    font-size: 18px;
+}

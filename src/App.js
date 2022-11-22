@@ -9,7 +9,7 @@ export const UserContext = createContext();
 
 function App() {
   const [isLogin, setLogin] = useState(false)
-  const [isAdmin, setAdmin] = useState(false)
+  const [isAdmin, setAdmin] = useState(true)
   return (
     <UserContext.Provider value={{isLogin, isAdmin}}>
       <BrowserRouter>
