@@ -27,22 +27,25 @@ button, input{
     justify-content: space-around;
     padding: 10px;
     margin-bottom: 20px;
+    
     button {
         font-size: 20px;
         padding: 5px 30px;
-        
+        color: black;
+    }
+    .loginActive {
+        border-bottom: 1px solid red;
+        color: red;
+    }
+    .signActive {
+        border-bottom: 1px solid red;
+        color: red;
     }
 }
 
-.loginActive {
-    border-bottom: 1px solid red;
-    color: red;
-}
 
-.signActive {
-    border-bottom: 1px solid red;
-    color: red;
-}
+
+
 
 label {
     color: rgb(0 0 0 /90%);

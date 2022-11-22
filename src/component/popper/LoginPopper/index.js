@@ -7,12 +7,14 @@ const cx = className.bind(style);
 function LoginPopper() {
     return (  
         <div className={cx('wrapper')}>
-            <button>
-                <Link to='/login'>Login</Link>
-            </button>
-            <button>
-                <Link to='/login'>Sign in</Link>
-            </button>
+            <Link>
+                <button className={cx('login')}>Login</button>
+            </Link>
+            
+            <Link to='/login'>
+                <button className={cx('signin')}>Sign in</button>
+            </Link>
+
         </div>
     );
 }
