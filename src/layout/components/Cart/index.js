@@ -8,9 +8,8 @@ import style from '../Header/Header.module.scss';
 
 var cx = className.bind(style)
 
-function CartPopup() {
+function Cart() {
     return (  
-        window.innerWidth > 760 ?
         <Tippy
             interactive={true}
             placement='bottom-end'
@@ -25,14 +24,8 @@ function CartPopup() {
                     <span>0</span>
                 </button>
             </Link>
-        </Tippy> :
-        <Link to='/cart'>
-            <button className={cx('cart-btn')}>
-                <FontAwesomeIcon icon={faCartShopping}/>
-                <span>0</span>
-            </button>
-        </Link>
+        </Tippy>
     );
 }
 
-export default CartPopup;
+export default Cart;

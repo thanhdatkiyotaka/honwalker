@@ -26,3 +26,8 @@ html *::-webkit-scrollbar-track {
     flex-direction: column;
 }
 
+button, input {
+    border: none;
+    outline: none;
+}
+

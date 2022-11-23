@@ -8,7 +8,7 @@ import style from '../Header/Header.module.scss';
 
 var cx = className.bind(style)
 
-function NonUserPopup() {
+function NonUser() {
     const length = window.innerWidth
     return (  
         length > 760 ?
@@ -36,4 +36,4 @@ function NonUserPopup() {
     );
 }
 
-export default NonUserPopup;
+export default NonUser;

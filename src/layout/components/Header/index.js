@@ -5,8 +5,12 @@ import { UserContext } from '~/App';
 import Search from '../Search';
 import Menu from '../Menu';
 import Cart from '../Cart';
+import CartMobile from '../CartMobile';
 import NonUser from '../NonUser';
+import NonUserMobile from '../NonUserMobile';
 import User from '../User';
+import UserMobile from '../UserMobile';
+import MenuMobile from '../MenuMobile';
 import className from 'classnames/bind';
 import style from './Header.module.scss';
 
@@ -24,6 +28,7 @@ function Header() {
                 <div className={cx('long-header')}>
                     <div className={cx('menu-logo')}>
                         <Menu/>
+                        <MenuMobile/>
                         <Link to='/' className={cx('logo')}>
                             <img src={require('~/assets/images/logo.png')} alt='logo'/>
                         </Link>
@@ -31,9 +36,17 @@ function Header() {
                     <Search/>
                     <div className={cx('option')}>
                         <Cart/>
+                        <CartMobile/>
                         {!userStatus.isLogin?
-                        <NonUser/>:
-                        <User/>}
+                        <>
+                            <NonUser/>
+                            <NonUserMobile/>
+                        </>:
+                        <>
+                            <User/>
+                            <UserMobile/>
+                        </>
+                        }
                         
                     </div>
                 </div>
