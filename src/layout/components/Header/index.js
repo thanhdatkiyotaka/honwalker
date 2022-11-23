@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '~/App';
 import Search from '../Search';
@@ -13,6 +13,7 @@ import style from './Header.module.scss';
 var cx = className.bind(style)
 
 function Header() {
+    const navigate = useNavigate();
     const userStatus = useContext(UserContext);
     return (  
         <header className={cx('wrapper')}>
@@ -33,6 +34,7 @@ function Header() {
                         {!userStatus.isLogin?
                         <NonUser/>:
                         <User/>}
+                        
                     </div>
                 </div>
             </div>

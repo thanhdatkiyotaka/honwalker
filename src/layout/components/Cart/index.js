@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {CartPopper} from '~/component/popper';
@@ -9,18 +10,28 @@ var cx = className.bind(style)
 
 function CartPopup() {
     return (  
+        window.innerWidth > 760 ?
         <Tippy
             interactive={true}
+            placement='bottom-end'
             render={attrs => (
                 <div className="box" tabIndex="-1" {...attrs}>
                     <CartPopper/>
                 </div>
         )}>
+            <Link to='/cart'>
+                <button className={cx('cart-btn')}>
+                    <FontAwesomeIcon icon={faCartShopping}/>
+                    <span>0</span>
+                </button>
+            </Link>
+        </Tippy> :
+        <Link to='/cart'>
             <button className={cx('cart-btn')}>
                 <FontAwesomeIcon icon={faCartShopping}/>
                 <span>0</span>
             </button>
-        </Tippy>
+        </Link>
     );
 }
 

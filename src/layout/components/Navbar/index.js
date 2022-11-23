@@ -10,15 +10,15 @@ import NavPopper from '~/component/popper/NavPopper';
 var cx = className.bind(style)
 
 function Navbar() {
-    const [navmobileShown, setShown] = useState(false);
+    const [shown, setShown] = useState(false);
     return (  
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('menu-logo')}>
                 <Tippy
                     interactive={true}
-                    
-                    visible={navmobileShown}
+                    trigger='click'
+                    visible={shown}
                     onClickOutside={()=>setShown(false)}
                     render={attrs => (
                         <div className="box" tabIndex="-1" {...attrs}>
@@ -26,7 +26,7 @@ function Navbar() {
                         </div>
                     )}
                     >
-                        <button className={cx('menu')} onClick={()=>setShown(!navmobileShown)}>
+                        <button className={cx('menu')} onClick={()=>setShown(true)}>
                             <FontAwesomeIcon icon={faBars}/>
                         </button>
                     </Tippy>

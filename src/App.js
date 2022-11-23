@@ -8,7 +8,7 @@ import AdminLayout from './layout/AdminLayout';
 export const UserContext = createContext();
 
 function App() {
-  const [isLogin, setLogin] = useState(false)
+  const [isLogin, setLogin] = useState(true)
   const [isAdmin, setAdmin] = useState(true)
   return (
     <UserContext.Provider value={{isLogin, isAdmin}}>

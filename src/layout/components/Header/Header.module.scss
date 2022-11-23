@@ -74,7 +74,7 @@
 }
 
 .input {
-    width: 370px;
+    width: 380px;
     position: relative;
     height: 40px;
     background: rgba(0 0 0 /8%);
@@ -141,12 +141,13 @@
 .option {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .cart-btn {
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 24px;
     color: rgba(0 0 0 /40%);
     margin-right: 20px;
     position: relative;
@@ -171,6 +172,7 @@
 .user-btn {
     border: none;
     outline: none;
+    padding: 5px;
     font-size: 20px;
     color: rgba(0 0 0 /40%);
     &:hover {
@@ -193,13 +195,19 @@
         padding-left: 10px;
         font-size: 14px;
         color: rgba(0 0 0 /50%);
+        width: 80px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &:hover{
         cursor: pointer;
     }
 }
 
-@media (max-width: 750px) {
+
+
+@media (max-width: 760px) {
     .logo {
         display: none;
     }

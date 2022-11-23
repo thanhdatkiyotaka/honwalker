@@ -9,13 +9,16 @@ import style from '../Header/Header.module.scss';
 var cx = className.bind(style)
 
 function NonUserPopup() {
+    const length = window.innerWidth
     return (  
+        length > 760 ?
         <Tippy
             interactive={true}
+            trigger='mouseenter'
             placement='bottom'
             render={attrs => (
                 <div className="box" tabIndex="-1" {...attrs}>
-                    <LoginPopper/>
+                    <LoginPopper />
                 </div>
             )}>
             <Link to='/login'>
@@ -23,7 +26,13 @@ function NonUserPopup() {
                     <FontAwesomeIcon icon={faUser}/>
                 </button>
             </Link>
-        </Tippy>
+        </Tippy>:
+        <Link to='/login'>
+            <button className={cx('user-btn')}>
+                <FontAwesomeIcon icon={faUser}/>
+            </button>
+        </Link>
+        
     );
 }
 
