@@ -12,6 +12,7 @@ function Cart() {
     return (  
         <Tippy
             interactive={true}
+            flipOnUpdate={true}
             placement='bottom-end'
             render={attrs => (
                 <div className="box" tabIndex="-1" {...attrs}>

@@ -8,10 +8,10 @@ import style from '../Header/Header.module.scss';
 var cx = className.bind(style);
 
 function Menu() {
+
     return (  
         <Tippy
             interactive={true}
-            
             placement='bottom-start'
             render={attrs => (
                 <div className="box" tabIndex="-1" {...attrs}>

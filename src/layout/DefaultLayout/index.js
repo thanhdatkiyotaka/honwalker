@@ -1,12 +1,13 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '~/assets/css/global.css'
+import './style.css'
 
 function DefaultLayout({children}) {
     return (  
         <div className='wrapper'>
             <Header/>
-            <div>{children}</div>
+            <div className='body'>{children}</div>
             <Footer/>
         </div>
     );

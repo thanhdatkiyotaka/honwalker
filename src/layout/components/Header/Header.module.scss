@@ -81,8 +81,7 @@
 .search {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
-    margin: 0 40px;
+    width: 600px;
 }
 
 .input {
@@ -181,6 +180,7 @@
     position: relative;
     color: white;
     margin-right: 10px;
+    margin-left: 10px;
     font-size: 18px;
     span{
         position: absolute;
@@ -295,9 +295,9 @@
         display: block;
     }
     .search{
+        width: calc(100vw - 300px);
         height: 30px;
         background: transparent;
-        margin: 0 30px 0 22px;
         
         .input {
             border-radius: 10px;
@@ -334,8 +334,13 @@
     }
 }
 
+@media (max-width: 768px) {
+    .search {
+        width: calc(100vw - 200px)
+    }
+} 
 @media (max-width: 576px) {
     .search {
-        margin: 0 8px 0 0px;
+        width: calc(100vw - 100px)
     }
 }
