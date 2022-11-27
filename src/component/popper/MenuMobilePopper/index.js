@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion} from 'framer-motion';
 import { vietBook, foreignBook, officeTool, schoolTool } from '../MenuData';
 import className from 'classnames/bind';
 import style from './MenuMobilePopper.module.scss';
@@ -12,7 +13,8 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
     ]
 
     return (  
-        <div className={cx('wrapper')}>
+        <motion.div className={cx('wrapper')}
+        >
             <div className={cx('header')}>
                 <button onClick={onClickClose}>
                     <FontAwesomeIcon icon={faArrowLeft}/>
@@ -175,7 +177,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                     ):<></>}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

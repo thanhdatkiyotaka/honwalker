@@ -225,7 +225,7 @@
 /* Tablet */
 @media (min-width: 768px) {
     .wide {
-        width: 700px;
+        width: 750px;
     }
     .row {
         margin-left: -6px;
@@ -339,7 +339,7 @@
 /* Larbe devide: tablet */
 @media (min-width:992px) {
     .wide {
-        width: 800px;
+        width: 900px;
     }
     
     .row {
