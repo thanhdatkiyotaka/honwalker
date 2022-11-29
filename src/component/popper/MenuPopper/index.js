@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-import { vietBook, foreignBook, officeTool, schoolTool } from '../MenuData';
+import Category from '~/rawData/Category';
 import className from 'classnames/bind';
 import style from './MenuPopper.module.scss';
 const cx = className.bind(style);
@@ -12,17 +12,16 @@ function MenuPopper() {
         <div className={cx('wrapper')}>
             <aside className={cx('category')}>
                 <h1>Product Category</h1>
-                <Link className={cx('link')}><button onMouseOver={()=>setType(1)}>Sách Tiếng Việt</button></Link>
-                <Link className={cx('link')}><button onMouseOver={()=>setType(2)}>Foreign Books</button></Link>
-                <Link className={cx('link')}><button onMouseOver={()=>setType(3)}>Văn phòng phẩm</button></Link>
-                <Link className={cx('link')}><button onMouseOver={()=>setType(4)}>Hành trang đến trường</button></Link>
+                {Category.map((item, index) => {return (
+                    <Link to={item.href} key={index} className={cx('link')}><button onMouseOver={()=>setType(index + 1)}>{item.title}</button></Link>
+                )})}    
             </aside>
             <span/>
             <div className={cx('content')}>
                 <div className={cx('inner')}>
                     {type === 1 ? 
                     (<>
-                        {vietBook.map((item, index) => {
+                        {Category[0].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     <h3>{item.title}</h3>
@@ -38,7 +37,7 @@ function MenuPopper() {
                     </>):<></>}
                     {type === 2 ? 
                     (<>
-                        {foreignBook.map((item, index) => {
+                        {Category[1].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     <h3>{item.title}</h3>
@@ -54,7 +53,7 @@ function MenuPopper() {
                     </>):<></>}
                     {type === 3 ? 
                     (<>
-                        {officeTool.map((item, index) => {
+                        {Category[2].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     <h3>{item.title}</h3>
@@ -70,7 +69,7 @@ function MenuPopper() {
                     </>):<></>}
                     {type === 4 ? 
                     (<>
-                        {schoolTool.map((item, index) => {
+                        {Category[3].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     <h3>{item.title}</h3>

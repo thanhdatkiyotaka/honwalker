@@ -1,6 +1,6 @@
 import {Cart, Home, Order, Product, Profile, Login, Payment, ListProduct, HistoryOrder} from '~/pages/publicPages';
 import {AdminHome, Finance, AdminListOrder, AdminOrder, AdminProfile} from '~/pages/privatePages';
-
+import Category from '../rawData/Category';
 
 
 var publicRoutes = [
@@ -14,6 +14,16 @@ var publicRoutes = [
     {path: 'history-order', component: HistoryOrder},
     {path: 'login', component: Login, layout: 'no'}
 ]
+
+Category.forEach((item) => {
+    publicRoutes.push({path: item.href, component: ListProduct})
+    item.children.forEach((item1) => {
+        publicRoutes.push({path: item1.href, component: ListProduct})
+        item1.children.forEach((item2) => {
+            publicRoutes.push({path: item2.href, component: ListProduct})
+        })
+    })
+})
 
 var privateRoutes = [
     {path: '/admin-home', component: AdminHome},

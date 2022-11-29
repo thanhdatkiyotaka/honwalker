@@ -6,8 +6,48 @@ import style from './ListProduct.module.scss';
 var cx = className.bind(style)
 
 function ListProduct() {
+    const saleProduct = [
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang, phiêu lưu ký,', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+        {url: require('~/assets/images/product.jpg'),
+        title: 'Phù thủy lang thang', href: '',
+        price: '99.000', sale: '20'},
+    ]
+    const href = window.location.href
     return (  
-        <div className={cx('wrapper')}>ListProduct</div>
+        
+
+
+        <div>{href}</div>
+  
     );
 }
 

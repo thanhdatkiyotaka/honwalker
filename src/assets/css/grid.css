@@ -2,8 +2,8 @@
     width: 100%;
     display: block;
 }
-.grid.wide {
-    max-width: 1200px;
+.wide {
+    max-width: 100%;
     margin: 0 auto;
 }
 .row {

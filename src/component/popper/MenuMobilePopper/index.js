@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion} from 'framer-motion';
-import { vietBook, foreignBook, officeTool, schoolTool } from '../MenuData';
+import Category from '~/rawData/Category';
 import className from 'classnames/bind';
 import style from './MenuMobilePopper.module.scss';
 import { faArrowLeft, faBook, faChevronRight, faEarthAmerica, faPen, faSchool, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
@@ -49,7 +49,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                     </Link>
                     {type === 1 ?
                     (
-                        vietBook.map((item, index) => {
+                        Category[0].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     {sub === index ?
@@ -60,7 +60,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                         </button>
                                         {item.children.map((nextItem, dex) => {
                                             return (
-                                                <Link key={dex} className={cx('link')}>
+                                                <Link to={nextItem.href} key={dex} className={cx('link')}>
                                                     <button onClick={onClickClose} className={cx('ex-category')}>
                                                         <span>{nextItem.title}</span>
                                                         <FontAwesomeIcon icon={faChevronRight}/>
@@ -68,7 +68,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                                 </Link>
                                                 )
                                         })}
-                                        <Link className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
+                                        <Link to={item.href} className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
                                     </>):
                                     (<button className={cx('title')} onClick={()=>onClickTitle(index)}>
                                         <span>{item.title}</span>
@@ -81,7 +81,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                     ):<></>}
                      {type === 2 ?
                     (
-                        foreignBook.map((item, index) => {
+                        Category[1].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     {sub === index ?
@@ -92,7 +92,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                         </button>
                                         {item.children.map((nextItem, dex) => {
                                             return (
-                                                <Link key={dex} className={cx('link')}>
+                                                <Link to={nextItem.href} key={dex} className={cx('link')}>
                                                     <button onClick={onClickClose} className={cx('ex-category')}>
                                                         <span>{nextItem.title}</span>
                                                         <FontAwesomeIcon icon={faChevronRight}/>
@@ -100,7 +100,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                                 </Link>
                                                 )
                                         })}
-                                        <Link className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
+                                        <Link to={item.href} className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
                                     </>):
                                     (<button className={cx('title')} onClick={()=>onClickTitle(index)}>
                                         <span>{item.title}</span>
@@ -113,7 +113,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                     ):<></>}
                      {type === 3 ?
                     (
-                        officeTool.map((item, index) => {
+                        Category[2].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     {sub === index ?
@@ -124,7 +124,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                         </button>
                                         {item.children.map((nextItem, dex) => {
                                             return (
-                                                <Link key={dex} className={cx('link')}>
+                                                <Link to={nextItem.href} key={dex} className={cx('link')}>
                                                     <button onClick={onClickClose}  className={cx('ex-category')}>
                                                         <span>{nextItem.title}</span>
                                                         <FontAwesomeIcon icon={faChevronRight}/>
@@ -132,7 +132,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                                 </Link>
                                                 )
                                         })}
-                                        <Link className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
+                                        <Link to={item.href} className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
                                     </>):
                                     (<button className={cx('title')} onClick={()=>onClickTitle(index)}>
                                         <span>{item.title}</span>
@@ -145,7 +145,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                     ):<></>}
                      {type === 4 ?
                     (
-                        schoolTool.map((item, index) => {
+                        Category[3].children.map((item, index) => {
                             return (
                                 <div key={index} className={cx('sub-category')}>
                                     {sub === index ?
@@ -156,7 +156,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                         </button>
                                         {item.children.map((nextItem, dex) => {
                                             return (
-                                                <Link key={dex} className={cx('link')}>
+                                                <Link to={nextItem.href} key={dex} className={cx('link')}>
                                                     <button onClick={onClickClose}  className={cx('ex-category')}>
                                                         <span>{nextItem.title}</span>
                                                         <FontAwesomeIcon icon={faChevronRight}/>
@@ -164,7 +164,7 @@ function MenuMobilePopper({onClickClose, sub, type, active1, active2, active3, a
                                                 </Link>
                                                 )
                                         })}
-                                        <Link className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
+                                        <Link to={item.href} className={cx('link')}><button onClick={onClickClose} className={cx('extend')}>Xem tất cả</button></Link>
                                     </>):
                                     (<button className={cx('title')} onClick={()=>onClickTitle(index)}>
                                         <span>{item.title}</span>
