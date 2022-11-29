@@ -1,0 +1,123 @@
+.inner {
+  width: 80%;
+  margin-top: 2%;
+  margin-left: 10%;
+  font-size: 1.2rem;
+}
+.inner * {
+  font-family: "Times New Roman", Times, serif;
+}
+.inner div {
+  padding: 1%;
+  width: 100%;
+}
+.info {
+  width: 100%;
+  background-color: white;
+}
+.ship,
+.payment,
+.re-check,
+.pay {
+  width: 100%;
+  margin-top: 2%;
+  background-color: white;
+}
+.paymenttxt,
+.shiptxt,
+.paymenttxt,
+.re-checktxt,
+.paytxt {
+  padding: 8px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ced4da;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.anothertxt {
+  font-weight: bold;
+}
+.groupinfo {
+  padding: 8px 0;
+  max-width: 800px;
+  clear: both;
+}
+.groupinfo label {
+  width: 200px;
+}
+.input-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.input-item input,
+select {
+  width: 100%;
+  padding-top: 0.3rem;
+  padding-right: 1.1em;
+  padding-bottom: 0.3rem;
+  padding-left: 1.1em;
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 2rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+.ship li,
+.payment li {
+  list-style: none;
+}
+.ship label,
+.payment label {
+  display: inline-table;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  margin: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.ship input,
+.payment input {
+  float: left;
+  height: 1.4rem;
+  width: 1.2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.payment label {
+  font-weight: normal;
+}
+.zalo {
+  float: left;
+  border: 1px solid black;
+}
+.payment img {
+  width: 40px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+.pay button {
+  display: block;
+  cursor: pointer;
+  width: 40%;
+  height: 3rem;
+  margin-left: 30%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 0.7rem;
+  background-color: rgb(200, 34, 34);
+}
+.pay button:hover {
+  background-color: red;
+}
