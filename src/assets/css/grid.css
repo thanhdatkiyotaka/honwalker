@@ -9,6 +9,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     margin-left: -2px;
     margin-right: -2px;
 }

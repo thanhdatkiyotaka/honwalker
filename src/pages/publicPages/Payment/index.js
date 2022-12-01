@@ -72,21 +72,21 @@ function Payment() {
                         <ul>
                             <li>
                                 <label htmlFor="">
-                                    <img src={require("~/assets/images/zalopay.png")} alt="" />
+                                    <img s alt="" />
                                     Ví ZaloPay
                                     <input type="radio" name="radpay" id="" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="">
-                                    <img src={require("~/assets/images/momo.jpg")} alt="" />
+                                    <img  alt="" />
                                     Ví MoMo
                                     <input type="radio" name="radpay" id="" />
                                 </label>
                             </li>
                             <li>
                                 <label htmlFor="">
-                                    <img src={require("~/assets/images/money.jpg")} alt="" />
+                                    <img  alt="" />
                                     Thanh toán trực tiếp khi nhận hàng
                                     <input type="radio" name="radpay" id="" />
                                 </label>

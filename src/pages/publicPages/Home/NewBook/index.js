@@ -79,7 +79,9 @@ function NewBook() {
                         )
                     })}
                 </CustomSwiper>
-                <Link className={cx('link')}><button className={cx('extend')}>Xem thêm</button></Link>
+                <Link className={cx('link')}>
+                    <button className={cx('extend')} onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}}>Xem thêm</button>
+                </Link>
             </div>
         </div>
     );

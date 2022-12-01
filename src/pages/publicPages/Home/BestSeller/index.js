@@ -10,7 +10,7 @@ var cx = className.bind(style)
 function BestSeller() {
     const saleProduct = [
         {url: require('~/assets/images/product.jpg'),
-        title: 'Phù thủy lang thang, phiêu lưu ký,', href: '',
+        title: 'Phù thủy lang thang, phiêu lưu ký, cong cha nhu nui thai son nghia me', href: '',
         price: '99.000', sale: ''},
         {url: require('~/assets/images/product.jpg'),
         title: 'Phù thủy lang thang', href: '',
@@ -57,7 +57,7 @@ function BestSeller() {
                     {saleProduct.map((product, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <div className={cx('product-wrapper')}>
+                                
                                     <div className={cx('product-wrapper')}>
                                         <div className={cx('product')}>
                                             <Link className={cx('link', 'product-info')} to={product.href}>
@@ -76,12 +76,14 @@ function BestSeller() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                
                             </SwiperSlide>
                         )
                     })}
                 </CustomSwiper>
-                <Link className={cx('link')}><button className={cx('extend')}>Xem thêm</button></Link>
+                <Link className={cx('link')}>
+                    <button className={cx('extend')} onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}}>Xem thêm</button>
+                </Link>
             </div>
         </div>
     );

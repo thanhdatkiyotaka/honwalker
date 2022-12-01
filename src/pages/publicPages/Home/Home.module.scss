@@ -91,12 +91,17 @@
         object-fit: cover;
     }
     span {
-        padding-top: 10px;
+        text-align: justify;
+        margin-top: 10px;
         text-align: center;
-        width: 220px;
-        height: 50px;
+        width: 200px;
         overflow: hidden;
         text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 25px;     
+        height: 50px;  
     }
     p {
         position: absolute;
@@ -148,6 +153,9 @@
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 10px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 
@@ -175,9 +183,10 @@
             height: 160px;
         }
         span {
-            font-size: 16px;
+            font-size: 15px;
             width: 160px;
-            height: 50px;
+            height: 46px;
+            line-height: 23px;
         }
     }
     .product-current-price {
@@ -209,7 +218,7 @@
     }
 
     .product {
-        width: 180px;
+        width: 175px;
 
     }
 
@@ -219,9 +228,10 @@
             height: 120px;
         }
         span {
-            font-size: 14px;
+            font-size: 13px;
             width: 130px;
-            height: 45px;
+            height: 40px;
+            line-height: 20px;
         }
     }
     .product-current-price {

@@ -2,7 +2,7 @@ const Category = [
     {href: '/vietbook', title: 'Sách Tiếng Việt',
     children: [{
         href: '/vietbook/van-hoc',
-        title: '/Văn học',
+        title: 'Văn học',
         children:[{href: '/vietbook/van-hoc/tieu-thuyet', title: 'Tiểu thuyết'},
         {href: '/vietbook/van-hoc/light-novel', title: 'Light Novel'},
         {href: '/vietbook/van-hoc/truyen-ngan', title: 'Truyện ngắn'},
@@ -17,18 +17,19 @@ const Category = [
         {href: '/vietbook/kinh-te/phan-tich-kinh-te', title: 'Phân tích kinh tế'}]
     },
     {
-        href: '/vietbook/tamly-kynangsong',
+        href: '/vietbook/tam-ly-ky-nang-song',
         title: 'Tâm lý - Kỹ năng sống',
-        children:[{href: '/vietbook/tamly-kynangsong/ky-nang-song', title: 'Kỹ năng sống'},
-        {href: '/vietbook/tamly-kynangsong/nhan-cach', title: 'Rèn luyện nhân cách'},
-        {href: '/vietbook/tamly-kynangsong/tam-ly', title: 'Tâm lý'},
-        {href: '/vietbook/tamly-kynangsong/tuoi-moi-lon', title: 'Tuổi mới lớn'}]
+        children:[{href: '/vietbook/tam-ly-ky-nang-song/ky-nang-song', title: 'Kỹ năng sống'},
+        {href: '/vietbook/tam-ly-ky-nang-song/nhan-cach', title: 'Rèn luyện nhân cách'},
+        {href: '/vietbook/tam-ly-ky-nang-song/tam-ly', title: 'Tâm lý'},
+        {href: '/vietbook/tam-ly-ky-nang-song/tuoi-moi-lon', title: 'Tuổi mới lớn'}]
     },
     {
         href: '/vietbook/sach-thieu-nhi',
         title: 'Sách thiếu nhi',
         children:[{href: '/vietbook/sach-thieu-nhi/comic', title: 'Comic'},
-        {href: '/vietbook/sach-thieu-nhi/manga', title: 'Manga'}, {href: '/vietbook/sach-thieu-nhi/bach-khoa-toan-thu', title: 'Bách khoa toàn thư'}, {href: '/vietbook/sach-thieu-nhi/sach-anh', title: 'Sách ảnh'}]
+        {href: '/vietbook/sach-thieu-nhi/manga', title: 'Manga'}, {href: '/vietbook/sach-thieu-nhi/bach-khoa-toan-thu', title: 'Bách khoa toàn thư'},
+        {href: '/vietbook/sach-thieu-nhi/sach-anh', title: 'Sách ảnh'}]
     },
     {
         href: '/vietbook/tieu-su-hoi-ky',
