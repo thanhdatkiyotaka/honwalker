@@ -11,8 +11,7 @@ export class AdminHome extends React.Component {
                     <div className="col-lg-12">
                         <div className="card card-transparent card-block card-stretch card-height border-none">
                             <div className="card-body p-0 mt-lg-2 mt-0">
-                                <h3 className="mb-3">Hi Graham, Good Morning</h3>
-                                <p className="mb-0 mr-4">Your dashboard gives you views of key performance or business process.</p>
+                                <h3 className="mb-3">Chào</h3>
                             </div>
                         </div>
                     </div>
