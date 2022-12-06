@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: *");
 
 $servername = "localhost";
 $username   = "root";
-$password   = "htkieT0964643875";
+$password   = "";
 $dbname     = "hieusach";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
