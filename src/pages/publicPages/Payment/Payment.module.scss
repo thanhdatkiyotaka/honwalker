@@ -3,8 +3,12 @@
   margin-top: 2%;
   margin-left: 10%;
   font-size: 1.2rem;
+  color: black;
 }
-
+.inner * {
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: none;
+}
 .inner div {
   padding: 1%;
   width: 100%;
@@ -28,7 +32,8 @@
 .paytxt {
   padding: 8px 0;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: bold;
+  color: black;
   border-bottom: 1px solid #ced4da;
   display: flex;
   flex-direction: row;
@@ -60,13 +65,12 @@ select {
   padding-bottom: 0.3rem;
   padding-left: 1.1em;
   font-size: 1.1em;
-  font-weight: 600;
-  line-height: 2rem;
+  font-weight: bold;
+  color: rgb(72, 67, 67);
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
 }
-
 .ship li,
 .payment li {
   list-style: none;
@@ -86,6 +90,7 @@ select {
   float: left;
   height: 1.4rem;
   width: 1.2rem;
+  margin-top: 0.2rem;
   margin-right: 1rem;
   cursor: pointer;
 }
@@ -118,4 +123,28 @@ select {
 }
 .pay button:hover {
   background-color: red;
+}
+.btPay {
+  text-decoration: none;
+}
+
+.wrap img {
+  width: 10rem;
+  height: 16rem;
+}
+td,
+th {
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .payment label {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .pay button {
+    font-size: 1.2rem;
+    height: 4rem;
+  }
 }
