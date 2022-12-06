@@ -1,6 +1,7 @@
 // /* Trang để tiến hành đặt hàng khi chọn sản phẩm từ giỏ hàng */
 import className from 'classnames/bind';
 import style from './Payment.module.scss';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React from "react";
 
@@ -142,7 +143,7 @@ class Payment extends React.Component {
                                         return (
                                             <tr>
                                                 <td>
-                                                    <img src={result.PHOTOURL} alt="" />
+                                                    <img src={require("~/assets/images/Elaina_04.jpg")} alt="" />
                                                 </td>
                                                 <td>{result.TEN_SP}</td>
                                                 <td>{result.SOLUONG}</td>
@@ -169,9 +170,11 @@ class Payment extends React.Component {
                                 Tổng Số Tiền (gồm VAT): <Total /> VNĐ
                             </div>
                             <hr />
-                            <button type='submit'>
-                                XÁC NHẬN THANH TOÁN
-                            </button>
+                            <Link to='/' className={cx('btPay')} >
+                                <button type='button' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }) }}>
+                                    XÁC NHẬN THANH TOÁN
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
