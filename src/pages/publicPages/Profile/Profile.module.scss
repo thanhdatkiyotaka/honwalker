@@ -5,15 +5,24 @@
     margin-left: 10%;
     font-size: 1.2rem;
     display: flex;
+    div{
+      margin: 1%;
+    }
   }
-  .inner div{
-    padding: 1%;
-    width: 100%;
-}
+.avt{
+  width: 350px;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    }
+  }
 .info{
-  width: 100%;
+  width: 80%;
   background-color: white;
   align-items: center;
+  border-radius: 30px;
 }
 
 .pHead{
@@ -36,18 +45,24 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
   }
 .row label{
-    width: 200px;
+    width:300px;
 }
 
 #pwC{
   label {
     width: 300px;
   }
+}
+.wrapInput{
+  position: relative;
   input{
-    margin-left: 0%;
+    margin: 0;
+    padding-left: 0;
+    position: absolute;
+    float: left;
+    align-items: left;
   }
 }
 #submit{

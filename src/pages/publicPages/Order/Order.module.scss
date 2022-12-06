@@ -1,0 +1,93 @@
+.inner{
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 1.2rem;
+    div{
+      margin: 1%;
+    }
+  }
+  .oHead{
+        padding: 8px 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom: 1px solid #ced4da;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      
+  }
+  .info{
+    width: 80%;
+    background-color: white;
+    border-radius: 30px;
+   
+  }
+  .title{
+    padding-top: 2%;
+    margin-left: 4%;
+}
+  .labelField{
+    padding-right: 20px;
+    width: 250px;
+  }
+  .infoField{
+    padding-left: 20px;
+    text-align: center;
+    font-weight: lighter;
+  }
+  .row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    font-weight: bold;
+    margin: 0px;
+    border-bottom: 1px solid #ced4da;
+    label{
+        width: 120px;
+    }
+  }
+  .productImage{
+    width: 25%;
+    label{
+        width: 100%;
+    }
+  }
+  .productName{
+    width: 50%;
+  }
+  .productPrice{
+    position:relative;
+    width: 25%;
+    text-align: right;
+  }
+  .btn{
+    color: green;
+  }
+  .rowBlock{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    label{
+        padding-bottom: 1%;
+    }
+  }
+  .blockInfo{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  #stateBlock1{
+    width:70%;
+    text-align: justify;
+  }
+  #stateBlock2{
+    width:30%;
+    text-align: justify;
+  }
+  #stateBlock3{
+    width:100%;
+    text-align: left;
+  }

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import className from "classnames/bind";
 import style from "./Profile.module.scss";
-import { TRUE } from "sass";
 var cx = className.bind(style);
 
 function Profile() {
@@ -21,6 +20,9 @@ function Profile() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("inner")}>
+        <div className={cx("avt")}>
+         <img src={require('~/assets/images/Elaina_04.jpg')} alt=''></img> 
+        </div>
         <div className={cx("info")}>
           <div className={cx("pHead")}>
             <h2>Thông tin tài khoản</h2>
@@ -31,7 +33,7 @@ function Profile() {
               <input
                 type="text"
                 name="userName"
-                value={inputs.userName || ""}
+                value={inputs.userName || "Majo Elaina"}
                 onChange={handleChange}
               />
             </div>
@@ -40,7 +42,7 @@ function Profile() {
               <input
                 type="number"
                 name="userPhone"
-                value={inputs.userPhone || ""}
+                value={inputs.userPhone || "0123456789"}
                 onChange={handleChange}
               />
             </div>
@@ -49,48 +51,46 @@ function Profile() {
               <input
                 type="email"
                 name="userMail"
-                value={inputs.userMail || ""}
+                value={inputs.userMail || "elaina@hcmut.edu.vn"}
                 onChange={handleChange}
               />
             </div>
             <div className={cx("row")}>
               <label>Giới tính</label>
-              <input
-                type="radio"
-                name="userGender"
-                value={inputs.userGender || ""}
-                onChange={handleChange}
-              />{" "}
-              Male
-              <input
-                type="radio"
-                name="userGender"
-                value={inputs.userGender || ""}
-                onChange={handleChange}
-              />{" "}
-              Female
+              <select value = {inputs.userGender || "Female"}>
+                  <option value="Female">Nữ</option>
+                  <option value="Male">Nam</option>
+              </select>
+            </div>
+            <div className={cx("row")}>
+                <label>Địa chỉ</label>
+                <input type = "text" value ={inputs.Address || "269 Lý Thường Kiệt, Quận 10, TPHCM"}></input>
             </div>
             <div className={cx("row")} id = {cx('pwC')}>
               <label>Thay đổi mật khẩu?</label>
+              <div className={cx('wrapInput')}>
               <input
                 type="checkbox"
                 value={false}
                 onChange={() => setShow(!show)}
               />
+               </div>
             </div>  
-          
-             <div className={cx("row")} id={cx("pw")}>
+            {show && <div className={cx("row")} id={cx("pw")}>
               <label>Nhập mật khẩu mới</label>
+          
               <input
                 type="password"
                 name="userPassword"
                 value={inputs.userPassword || ""}
                 onChange={handleChange}
               />
-            </div>
+              </div>
+            }
             <div className={cx("row")} id = {cx('submit')}>
-              <button type = "submit">SUBMIT</button>
+              <button type = "submit" onClick = {handleSubmit}>SUBMIT</button>
             </div>
+
           </div>
         </div>
       </div>
