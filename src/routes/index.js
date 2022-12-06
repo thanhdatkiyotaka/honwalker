@@ -5,18 +5,19 @@ import Category from '../rawData/Category';
 
 
 var publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/cart', component: Cart },
-    { path: '/product', component: Product },
-    { path: 'profile', component: Profile },
-    { path: 'order', component: Order },
-    { path: '/payment', component: Payment },
-    { path: '/list-product', component: ListProduct },
-    { path: '/history-order', component: HistoryOrder },
-    { path: '/login', component: Login },
-    { path: '/sale', component: Sale },
-    { path: '/best-seller', component: BestSeller },
-    { path: '/new-book', component: NewBook }
+    {path: '/', component: Home},
+    {path: '/cart', component: Cart},
+    {path: '/product', component: Product},
+    {path: 'profile', component: Profile},
+    {path: 'order', component: Order},
+    {path: '/payment', component: Payment},
+    {path: '/list-product', component: ListProduct},
+    {path: '/history-order', component: HistoryOrder},
+    {path: '/login', component: Login},
+    {path: '/sale', component: Sale},
+    {path: '/best-seller', component: BestSeller},
+    {path: '/new-book', component: NewBook},
+    {path: ':id', component: Product}
 ]
 
 Category.forEach((item) => {

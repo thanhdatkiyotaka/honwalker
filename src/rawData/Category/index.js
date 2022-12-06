@@ -1,18 +1,18 @@
 const Category = [
-    {href: '/vietbook', title: 'Sách Tiếng Việt',
+    {href: '/vietbook', title: 'Sách Tieng Viet',
     children: [{
         href: '/vietbook/van-hoc',
-        title: 'Văn học',
-        children:[{href: '/vietbook/van-hoc/tieu-thuyet', title: 'Tiểu thuyết'},
-        {href: '/vietbook/van-hoc/light-novel', title: 'Light Novel'},
-        {href: '/vietbook/van-hoc/truyen-ngan', title: 'Truyện ngắn'},
-        {href: '/vietbook/van-hoc/ngon-tinh', title: 'Ngôn tình'}]
+        title: 'Van hoc',
+        children:[{href: '/vietbook/van-hoc/tieu-thuyet', title: 'Tieu thuyet'},
+        {href: '/vietbook/van-hoc/light-novel', title: 'Light novel'},
+        {href: '/vietbook/van-hoc/truyen-ngan', title: 'Truyen ngan'},
+        {href: '/vietbook/van-hoc/ngon-tinh', title: 'Ngon tinh'}]
     },
     {
         href: '/vietbook/kinh-te',
-        title: 'Kinh tế',
+        title: 'Kinh te',
         children:[{href: '/vietbook/kinh-te/nhan-vat-bai-hoc-kinh-doanh', title: 'Nhân vật - Bài học kinh doanh'},
-        {href: '/vietbook/kinh-te/quan-tri-lanh-dao', title: 'Quản trị - Lãnh đạo'},
+        {href: '/vietbook/kinh-te/quan-tri-lanh-dao', title: 'Quan tri - lanh dao'},
         {href: '/vietbook/kinh-te/marketing', title: 'Marketing'},
         {href: '/vietbook/kinh-te/phan-tich-kinh-te', title: 'Phân tích kinh tế'}]
     },
@@ -26,7 +26,7 @@ const Category = [
     },
     {
         href: '/vietbook/sach-thieu-nhi',
-        title: 'Sách thiếu nhi',
+        title: 'Sach thieu nhi',
         children:[{href: '/vietbook/sach-thieu-nhi/comic', title: 'Comic'},
         {href: '/vietbook/sach-thieu-nhi/manga', title: 'Manga'}, {href: '/vietbook/sach-thieu-nhi/bach-khoa-toan-thu', title: 'Bách khoa toàn thư'},
         {href: '/vietbook/sach-thieu-nhi/sach-anh', title: 'Sách ảnh'}]

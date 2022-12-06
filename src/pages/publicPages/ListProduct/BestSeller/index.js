@@ -289,7 +289,7 @@ function BestSeller() {
 
     return (  
         <div className='grid wide'>
-            <div className={cx('content')}>
+            <div className={cx('content')} style={{ marginTop: '7px'}}>
                 <div className={cx('filter')}>
                     <span>Sort by</span>
                     <Select defaultValue={sort1} onChange={setSort1} options={options1} className={cx('select')}/>

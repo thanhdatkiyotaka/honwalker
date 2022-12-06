@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import {Link, useNavigate} from 'react-router-dom';
-import { useContext } from 'react';
-import { UserContext } from '~/App';
+import { useEffect, useState } from 'react';
+
 import Search from '../Search';
 import Menu from '../Menu';
 import Cart from '../Cart';
@@ -18,7 +19,10 @@ var cx = className.bind(style)
 
 function Header() {
     const navigate = useNavigate();
-    const userStatus = useContext(UserContext);
+    const [userId, setUserId] = useState(localStorage.getItem('userId'));
+    useEffect(()=>{
+        setUserId(localStorage.getItem('userId'))
+    },[localStorage.getItem('userId')])
     return (  
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -37,7 +41,7 @@ function Header() {
                     <div className={cx('option')}>
                         <Cart/>
                         <CartMobile/>
-                        {!userStatus.isLogin?
+                        {!userId?
                         <>
                             <NonUser/>
                             <NonUserMobile/>
