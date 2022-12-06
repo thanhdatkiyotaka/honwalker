@@ -1,17 +1,15 @@
 /* eslint-disable no-unused-vars */
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 import {publicRoutes, privateRoutes} from './routes';
-import { createContext, useState } from 'react';
 import DefaultLayout from './layout/DefaultLayout';
 import AdminLayout from './layout/AdminLayout';
 
-export const UserContext = createContext();
+
 
 function App() {
-  const [isLogin, setLogin] = useState(true)
-  const [isAdmin, setAdmin] = useState(true)
+
   return (
-    <UserContext.Provider value={{isLogin, isAdmin}}>
+  
       <BrowserRouter>
         <div className='App'>
           <Routes>
@@ -31,7 +29,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-    </UserContext.Provider>
+  
   );
 }
 

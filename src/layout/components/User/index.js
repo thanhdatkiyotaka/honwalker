@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import Tippy from '@tippyjs/react/headless';
+import {useState} from 'react';
 import {UserPopper} from '~/component/popper';
 import { useSpring, motion} from 'framer-motion';
 import className from 'classnames/bind';
@@ -7,6 +9,7 @@ import style from '../Header/Header.module.scss';
 var cx = className.bind(style)
 
 function User() {
+    const [user, setUser] = useState({name: localStorage.getItem('userName'), photo: localStorage.getItem('userPhoto')})
     const springConfig = { damping: 30, stiffness: 300 };
     const initialScale = 0.5;
     const opacity = useSpring(0, springConfig);
@@ -41,8 +44,8 @@ function User() {
                 </motion.div>
             )}>
             <div className={cx('user-info')}>
-                <img alt='' src={require('~/assets/images/Elaina_04.jpg')}/>
-                <span>Majo Elaina</span>
+                <img alt='' src={user.photo}/>
+                <span>{user.name}</span>
             </div>
         </Tippy>
     );

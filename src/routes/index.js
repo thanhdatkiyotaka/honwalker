@@ -16,7 +16,8 @@ var publicRoutes = [
     {path: '/login', component: Login},
     {path: '/sale', component: Sale},
     {path: '/best-seller', component: BestSeller},
-    {path: '/new-book', component: NewBook}
+    {path: '/new-book', component: NewBook},
+    {path: ':id', component: Product}
 ]
 
 Category.forEach((item) => {
