@@ -15,14 +15,15 @@ function Pagenate({products, itemPerPage}) {
         const newOffset = (event.selected * itemPerPage) % products.length;
         setItemOffset(newOffset);
     };
+
     return (  
         <>
             <div className={cx('product-list')}>  
                 {currentItems && currentItems.map((product, index) => { return (
                     <div key={index} className={cx('product')}>
                         <Link className={cx('link', 'product-info')} to={product.href}>
-                            <img src={product.url} alt=''/>
-                            <span className={cx('product-name')}>{product.title}</span>
+                            <img src={product.photoUrl} alt=''/>
+                            <span className={cx('product-name')}>{product.name}</span>
                             {product.sale ? <p>{product.sale + '%'}</p> : <></>}
                         </Link>
                         <div className={cx('price')}>

@@ -6,11 +6,11 @@ var cx = className.bind(style)
 function TopMenu() {
     const topMenu = [
         {url: require('~/assets/images/seller.jpg'),
-        title: 'Best seller', href: ''},
+        title: 'Best seller', href: '/best-seller'},
         {url: require('~/assets/images/sale.png'),
-        title: 'Giảm giá', href: ''},
+        title: 'Giảm giá', href: '/sale'},
         {url: require('~/assets/images/new.png'),
-        title: 'Sách mới', href: ''},
+        title: 'Sách mới', href: '/new-book'},
         {url: require('~/assets/images/kinh_te.jpg'),
         title: 'Kinh tế', href: '/vietbook/kinh-te'},
         {url: require('~/assets/images/novel.png'),

@@ -1,6 +1,6 @@
-import {Cart, Home, Order, Product, Profile, Login, Payment, ListProduct, HistoryOrder} from '~/pages/publicPages';
-import {AdminHome, Finance, AdminListOrder, AdminOrder, AdminProfile} from '~/pages/privatePages';
-import {Sale, NewBook, BestSeller} from '~/pages/publicPages/ListProduct';
+import { Cart, Home, Order, Product, Profile, Login, Payment, ListProduct, HistoryOrder } from '~/pages/publicPages';
+import { AdminHome, Finance, AdminListOrder, AdminOrderDetail, AdminProfile, AdminProduct, AdminAddProduct } from '~/pages/privatePages';
+import { Sale, NewBook, BestSeller } from '~/pages/publicPages/ListProduct';
 import Category from '../rawData/Category';
 
 
@@ -16,7 +16,8 @@ var publicRoutes = [
     {path: '/login', component: Login},
     {path: '/sale', component: Sale},
     {path: '/best-seller', component: BestSeller},
-    {path: '/new-book', component: NewBook}
+    {path: '/new-book', component: NewBook},
+    {path: ':id', component: Product}
 ]
 
 Category.forEach((item) => {
@@ -30,11 +31,13 @@ Category.forEach((item) => {
 })
 
 var privateRoutes = [
-    {path: '/admin-home', component: AdminHome},
-    {path: '/admin-order', component: AdminOrder},
-    {path: '/admin-profile', component: AdminProfile},
-    {path: '/admin-finance', component: Finance},
-    {path: '/admin-listorder', component: AdminListOrder}
+    { path: '/admin-home', component: AdminHome },
+    { path: '/admin-order-detail', component: AdminOrderDetail },
+    { path: '/admin-profile', component: AdminProfile },
+    { path: '/admin-finance', component: Finance },
+    { path: '/admin-order', component: AdminListOrder },
+    { path: '/admin-product', component: AdminProduct },
+    { path: '/admin-add-product', component: AdminAddProduct },
 ]
 
-export {publicRoutes, privateRoutes};
+export { publicRoutes, privateRoutes };

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 import { SearchPopper } from '~/component/popper';
+import useDebounce from '~/hooks';
 import className from 'classnames/bind';
 import style from '../Header/Header.module.scss';
 

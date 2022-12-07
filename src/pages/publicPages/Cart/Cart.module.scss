@@ -1,13 +1,27 @@
+table,
+tbody {
+  width: 100%;
+}
+input {
+  background-color: #fff;
+  padding-left: 5%;
+}
 .inner {
   display: flex;
   width: 90%;
   margin-left: 5%;
+  color: black;
+}
+.inner * {
+  font-family: "Times New Roman", Times, serif;
 }
 .cart {
-  width: 60%;
+  width: 90%;
 }
 .payment {
-  width: 30%;
+  display: block;
+  width: 40%;
+  height: 50%;
   margin-left: 10%;
   margin-top: 6%;
   border-radius: 0.7rem;
@@ -21,6 +35,7 @@
 .cartselect,
 .cartproduct {
   display: flex;
+  width: 100%;
   font-size: 1.1rem;
   margin-left: 1rem;
   padding: 0.8rem;
@@ -29,6 +44,9 @@
 }
 .cartproduct {
   margin-top: 1rem;
+}
+.wrap {
+  font-size: 1.5rem;
 }
 .actioncheck {
   height: 20px;
@@ -43,22 +61,22 @@
 .anothertxt1,
 .anothertxt2 {
   font-size: 1.4rem;
-  margin-top: -0.1rem;
-  margin-left: 0.5rem;
-  margin-right: 18rem;
+  margin-top: -0.2%;
+  margin-left: 2%;
+  margin-right: 35%;
 }
 .anothertxt1 {
-  margin-right: 5rem;
+  margin-right: 15%;
 }
 .anothertxt2 {
   margin-right: 0;
 }
 .anothertxt3 {
-  margin: 1rem 1rem;
+  margin: 3% 3%;
   font-size: 1.2rem;
 }
 .anothertxt4 {
-  margin: 1rem 1rem;
+  margin: 3% 3%;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -82,4 +100,64 @@
 }
 .btPay button:hover {
   background-color: red;
+}
+.wrap img {
+  width: 11rem;
+  height: 16rem;
+}
+.toSetSL {
+  width: 5rem;
+}
+.toSetP {
+  width: 13rem;
+  text-align: right;
+}
+@media only screen and (max-width: 1240px) {
+  .inner {
+    display: block;
+  }
+  .cart {
+    width: 100%;
+  }
+  .payment {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .payment button {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .inner {
+    display: block;
+  }
+  .cart {
+    width: 100%;
+  }
+  .anothertxt,
+  .anothertxt1,
+  .anothertxt2 {
+    font-size: 1rem;
+  }
+  .payment {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  .payment button {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  .wrap {
+    font-size: 1rem;
+  }
+  .toSetSL {
+    width: 3rem;
+  }
+  .toSetP {
+    width: 8rem;
+    text-align: right;
+  }
 }

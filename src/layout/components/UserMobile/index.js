@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import { useSpring, motion } from 'framer-motion';
@@ -8,6 +9,7 @@ import style from '../Header/Header.module.scss';
 var cx = className.bind(style)
 
 function UserMobile() {
+    const [user, setUser] = useState({name: localStorage.getItem('userName'), photo: localStorage.getItem('userPhoto')})
     const [show, setShow] = useState(false)
     const springConfig = { damping: 30, stiffness: 300 };
     const initialScale = 0.5;
@@ -44,8 +46,8 @@ function UserMobile() {
                 </motion.div>
             )}>
             <div className={cx('user-info-mobile')} onClick={()=>setShow(!show)}>
-                <img alt='' src={require('~/assets/images/Elaina_04.jpg')}/>
-                <span>Majo Elaina</span>
+                <img alt='' src={user.photo}/>
+                <span>{user.name}</span>
             </div>
         </Tippy>
     );
