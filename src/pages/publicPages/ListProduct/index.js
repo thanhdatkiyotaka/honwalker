@@ -34,7 +34,7 @@ function ListProduct() {
     const [sort2, setSort2] = useState(options2[1]);
 
     useEffect(()=> {
-        axios.post('http://localhost/getTypeProduct.php', {key: localStorage.getItem('category')})
+        axios.post('http://localhost:8000/getTypeProduct.php', {key: localStorage.getItem('category')})
         .then((result)=> {
             setListProduct(result.data);
             console.log(result.data);

@@ -22,7 +22,7 @@ function Search() {
             setResult([]);
             return;
         }
-        axios.post('http://localhost/searchResult.php', {key: debounceKey})
+        axios.post('http://localhost:8000/searchResult.php', {key: debounceKey})
                 .then((result) => {
                     if (result.data === 'no result') setResult([]);
                     else {

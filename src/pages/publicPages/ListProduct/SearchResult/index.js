@@ -33,7 +33,7 @@ function SearchResult() {
             setResult([]);
             return;
         }
-        axios.post('http://localhost/searchResult.php', {key: key})
+        axios.post('http://localhost:8000/searchResult.php', {key: key})
                 .then((result) => {
                     if (result.data === 'no result') setResult([]);
                     else {
