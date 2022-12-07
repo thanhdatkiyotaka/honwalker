@@ -39,5 +39,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+   
+    <script src="./admin/js/backend-bundle.min.js"></script>
+    
+    <script>
+      if (window.location.pathname.startsWith('/admin')) {
+        $.getScript('./admin/js/table-treeview.js').then(()=>{
+          $.getScript('./admin/js/customizer.js').then(()=>{
+            $.getScript('./admin/js/chart-custom.js').then(() => {
+              $.getScript('./admin/js/app.js')
+            })
+          })
+        })
+      }
+    </script>
+  
   </body>
 </html>

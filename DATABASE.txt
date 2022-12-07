@@ -1,0 +1,373 @@
+CREATE DATABASE ltw;
+-- Table 1
+CREATE TABLE TAIKHOAN (
+	MA_TK int AUTO_INCREMENT,
+	EMAIL VARCHAR(50) NOT NULL,
+	MATKHAU VARCHAR(20) NOT NULL,
+	TEN VARCHAR(50) NOT NULL,
+	PHOTOURL VARCHAR(100),
+	SDT VARCHAR(12),
+	GIOITINH VARCHAR(3),
+	NGAYSINH DATE,
+
+	CONSTRAINT TAIKHOAN_PK PRIMARY KEY (MA_TK)
+);
+
+
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('a@gmail.com', '1234', N'Nguyễn Văn A', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('b@gmail.com', '1234', N'Nguyễn Văn B', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('c@gmail.com', '1234', N'Nguyễn Văn C', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('d@gmail.com', '1234', N'Nguyễn Văn D', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('e@gmail.com', '1234', N'Nguyễn Văn E', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('f@gmail.com', '1234', N'Nguyễn Văn F', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('g@gmail.com', '1234', N'Nguyễn Văn G', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('h@gmail.com', '1234', N'Nguyễn Văn H', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into .TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('i@gmail.com', '1234', N'Nguyễn Văn I', '~/assets/images/Elaina_04.jpg', '0111111111');
+insert into TAIKHOAN (EMAIL, MATKHAU, TEN, PHOTOURL, SDT)
+values ('j@gmail.com', '1234', N'Nguyễn Văn J', '~/assets/images/Elaina_04.jpg', '0111111111');
+
+
+--  Table 2
+CREATE TABLE WEBADMIN (
+	MA_AD int,
+
+	CONSTRAINT NHANVIEN_PK PRIMARY KEY (MA_AD),
+	CONSTRAINT NHANVIEN_FK FOREIGN KEY (MA_AD) REFERENCES TAIKHOAN (MA_TK)
+);
+
+
+insert into WEBADMIN (MA_AD)
+values (1);
+
+
+--  Table 3
+CREATE TABLE DIACHI (
+	MA_DC int,
+	TENNGUOINHAN VARCHAR(50) NOT NULL,
+	SDT VARCHAR(12) NOT NULL,
+	DIACHI VARCHAR(200) NOT NULL,
+	TINH VARCHAR(50) NOT NULL,
+	HUYEN VARCHAR(50) NOT NULL,
+	MA_TK int NOT NULL,
+	CONSTRAINT SODIACHI_PK PRIMARY KEY (MA_DC, MA_TK),
+	CONSTRAINT SODIACHI_FK FOREIGN KEY (MA_TK) REFERENCES TAIKHOAN (MA_TK)
+);
+
+
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn A', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 1);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (2, N'Nguyễn Văn A', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 1);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn B', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 2);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn C', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 3);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn D', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 4);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn E', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 5);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn F', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 6);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn G', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 7);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (2, N'Nguyễn Văn G', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 7);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn H', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 8);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn I', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 9);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (1, N'Nguyễn Văn J', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 10);
+insert into DIACHI (MA_DC, TENNGUOINHAN, SDT, DIACHI, TINH, HUYEN, MA_TK)
+values (2, N'Nguyễn Văn J', '0911111111', 'Lý Thường Kiệt', 'TP Hồ Chí Minh', '10', 10);
+
+
+-- Table 5
+CREATE TABLE SANPHAM (
+	MA_SP int AUTO_INCREMENT, 
+	TEN_SP VARCHAR(50) NOT NULL,
+	GIA_SP DECIMAL(20) NOT NULL,
+	NHACUNGCAP_SP VARCHAR(100) NOT NULL,
+	TINHTRANG_SP BIT NOT NULL,
+	TYPEONE VARCHAR(50) NOT NULL,
+	TYPETWO VARCHAR(100) NOT NULL,
+	TYPETHREE VARCHAR(100) NOT NULL,
+	SOLD int DEFAULT 0,
+	SALE int DEFAULT 0,
+	HREF VARCHAR(200) NOT NULL,
+	MOTA VARCHAR(1000) NOT NULL,
+	NGAY DATE DEFAULT '20221010',
+	PHOTOURL VARCHAR(200),
+
+	CONSTRAINT SANPHAM_PK PRIMARY KEY (MA_SP)
+);
+
+
+-- 1 TIểu thuyết
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Anh khao khát em', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 12, 20, '/anh-khao-khat-em', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Cánh đồng ngựa', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 42, 10, '/canh-dong-ngua', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Thư gửi thiên thần', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 12, 20, '/thu-gui-thien-than', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Đừng mơ sói ạ', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 12, 0, '/dung-mo-soi-a', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Trò chơi vương quyền', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 112, 40, '/tro-choi-vuong-quyen', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Thư nghiệm hoang dại', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 12, 20, '/thu-nghiem-hoang-dai', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Hòm thư số 110', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 0, 0, '/hom-thu-so-110', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Những người đàn bà', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 12, 20, '/nhung-nguoi-dan-ba', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'ĐÊm rừng', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Tieu thuyet', 12, 20, '/dem-rung', N'', '~/assets/images/product.jpg');
+
+-- Light Novel
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Sword Art Online tập 5', '50000', 'AZBook', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 12, 20, '/sword-art-online-tap-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'86 tập 3', '50000', 'AZBook', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 12, 20, '86-tap-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Thiên thần sa ngã tập 5', '50000', 'AZBook', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 12, 20, '/thien-than-sa-nga-tap-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Hành trình Elaina tập 10', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 12, 0, '/hành-trinh-elaina-tap-10', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Date a Live tập 2', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 112, 40, '/date-a-live-tap-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Date a Live tập 3', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 12, 20, '/date-a-live-tap-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ảo ảnh và tro tàn tập 2', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 0, 0, '/ao-anh-va-tro-tan-tap-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ảo ảnh và tro tàn tập 5', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Light novel', 0, 0, '/ao-anh-va-tro-tan-tap-5', N'', '~/assets/images/product.jpg');
+
+
+-- Truyện ngắn
+insert into SANPHAM (TEN_SP,  GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngăn 1', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 12, 20, '/truyen-ngan-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 2', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 42, 10, 'truyen-ngan-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 3', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 12, 20, '/truyen-ngan-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 4', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 12, 0, '/truyen-ngan-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 5', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 112, 40, '/truyen-ngan-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 6', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 12, 20, '/truyen-ngan-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 7', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 0, 0, '/truyen-ngan-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 8', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 12, 20, '/truyen-ngan-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Truyện ngắn 9', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Truyen ngan', 12, 20, '/truyen-ngan-9', N'', '~/assets/images/product.jpg');
+
+-- Ngôn tình
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 1', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 12, 20, '/ngon-tinh-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 2', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 42, 10, 'ngon-tinh-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 3', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 12, 20, '/ngon-tinh-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 4', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 12, 0, '/ngon-tinh-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 5', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 112, 40, '/ngon-tinh-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 6', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 12, 20, '/ngon-tinh-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 7', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 0, 0, '/ngon-tinh-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 8', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 12, 20, '/ngon-tinh-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Ngôn tình 9', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Van hoc', 'Ngon tinh', 12, 20, '/ngon-tinh-9', N'', '~/assets/images/product.jpg');
+
+-- Kinh tế: Marketing
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 1', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 12, 20, '/quan-tri-lanh-dao-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 2', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 42, 10, 'quan-tri-lanh-dao-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 3', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 12, 20, '/quan-tri-lanh-dao-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 4', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 12, 0, '/quan-tri-lanh-dao-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 5', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 112, 40, '/quan-tri-lanh-dao-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 6', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 12, 20, 'quan-tri-lanh-dao-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 7', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 0, 0, '/quan-tri-lanh-dao-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 8', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 12, 20, 'quan-tri-lanh-dao-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N' Quan tri - lanh dao 9', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Kinh te', ' Quan tri - lanh dao', 12, 20, '/quan-tri-lanh-dao-9', N'', '~/assets/images/product.jpg');
+
+
+-- Manga
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 1', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 12, 20, '/manga-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 2', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 42, 10, '/manga-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 3', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 12, 20, '/manga-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 4', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 12, 0, '/manga-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM  (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 5', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 112, 40, '/manga-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 6', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 12, 20, '/manga-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 7', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 0, 0, '/manga-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM  (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 8', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 12, 20, '/manga-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Manga 9', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach thieu nhi', 'Manga', 12, 20, '/manga-9', N'', '~/assets/images/product.jpg');
+
+-- Sach học ngoại ngữ
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 1', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 12, 20, '/tieng-anh-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 2', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 42, 10, '/tieng-anh-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 3', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 12, 20, '/tieng-anh-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 4', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 12, 0, '/tieng-anh-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM  (TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 5', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 112, 40, '/tieng-anh-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 6', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 12, 20, '/tieng-anh-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 7', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 0, 0, '/tieng-anh-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 8', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 12, 20, '/tieng-anh-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Anh 9', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Anh', 12, 20, '/tieng-anh-9', N'', '~/assets/images/product.jpg');
+
+-- Tiếng Nhật
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 1', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 12, 20, '/tieng-nhat-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 2', '60000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 42, 10, '/tieng-nhat-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 3', '30000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 12, 20, '/tieng-nhat-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 4', '120000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 12, 0, '/tieng-nhat-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 5', '100000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 112, 40, '/tieng-nhat-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 6', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 12, 20, '/tieng-nhat-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 7', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 0, 0, '/tieng-nhat-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 8', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 12, 20, '/tieng-nhat-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Tiếng Nhật 9', '50000', 'NXB Phụ nữ', 1, 'Sach Tieng Viet', 'Sach hoc ngoai ngu', 'Tieng Nhat', 12, 20, '/tieng-nhat-9', N'', '~/assets/images/product.jpg');
+
+-- Văn phòng phẩm
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 1', '50000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 12, 20, '/but-muc-1', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 2', '60000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 42, 10, '/but-muc-2', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 3', '30000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 12, 20, '/but-muc-3', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 4', '120000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 12, 0, '/but-muc-4', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 5', '100000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 112, 40, '/but-muc-5', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 6', '50000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 12, 20, '/but-muc-6', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 7', '50000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 0, 0, '/but-muc-7', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 8', '50000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 12, 20, '/but-muc-8', N'', '~/assets/images/product.jpg');
+insert into SANPHAM ( TEN_SP, GIA_SP, NHACUNGCAP_SP, TINHTRANG_SP, TYPEONE, TYPETWO, TYPETHREE, SOLD, SALE, HREF, MOTA, PHOTOURL)
+values ( N'Bút mực 9', '50000', 'Kim Long', 1, 'Dung cu - Van phong', 'But - Viet', 'But muc', 12, 20, '/but-muc-9', N'', '~/assets/images/product.jpg');
+
+
+-- Table 5
+CREATE TABLE CHITIETGIOHANG (
+	MA_TK int,
+	MA_SP int,
+	SOLUONG int,
+
+	CONSTRAINT GIOHANG_PK PRIMARY KEY(MA_TK, MA_SP),
+	CONSTRAINT GIOHANG_FK1 FOREIGN KEY (MA_TK) REFERENCES TAIKHOAN (MA_TK),
+	CONSTRAINT GIOHANG_FK2 FOREIGN KEY (MA_SP) REFERENCES SANPHAM (MA_SP)
+);
+
+
+
+insert into CHITIETGIOHANG (MA_TK, MA_SP, SOLUONG)
+values (2, 10, 1);
+insert into CHITIETGIOHANG (MA_TK, MA_SP, SOLUONG)
+values (2, 11, 2);
+insert into CHITIETGIOHANG (MA_TK, MA_SP, SOLUONG)
+values (5, 1, 3);
+insert into CHITIETGIOHANG (MA_TK, MA_SP, SOLUONG)
+values (5, 10, 1);
+insert into CHITIETGIOHANG (MA_TK, MA_SP, SOLUONG)
+values (5, 15, 4);
+insert into CHITIETGIOHANG (MA_TK, MA_SP, SOLUONG)
+values (3, 10, 1);
+
+
+
+-- Table 6
+
+CREATE TABLE DONHANG (
+	MA_DH int AUTO_INCREMENT,
+	THOIGIANDATHANG DATETIME DEFAULT '20221110',
+	PHUONGTHUCTHANHTOAN VARCHAR(100),
+	TINHTRANG VARCHAR(100),
+	MA_TK int NOT NULL,
+	MA_DC int NOT NULL,
+	
+	CONSTRAINT DONHANG_PK PRIMARY KEY (MA_DH),
+	CONSTRAINT DONHANG_FK_1 FOREIGN KEY (MA_TK) REFERENCES TAIKHOAN (MA_TK),
+	CONSTRAINT DONHANG_FK_2 FOREIGN KEY (MA_DC, MA_TK) REFERENCES DIACHI (MA_DC, MA_TK)
+);
+
+
+
+
+insert into DONHANG ( PHUONGTHUCTHANHTOAN, TINHTRANG, MA_TK, MA_DC)
+values ( N'Momo', N'Đã hoàn thành', 2, 1);
+
+insert into DONHANG ( PHUONGTHUCTHANHTOAN, TINHTRANG, MA_TK, MA_DC)
+values (N'Tiền mặt', N'Đang vận chuyển', 2, 1);
+
+
+-- Table 7
+
+CREATE TABLE CHITIETDONHANG(
+	MA_DH int NOT NULL,
+	MA_SP int NOT NULL,
+	SOLUONG int NOT NULL,
+	GIA int NOT NULL,
+	THANHTIEN int,
+
+	CONSTRAINT CHITIETDONHANG_FK_MA_SP FOREIGN KEY (MA_DH) REFERENCES DONHANG (MA_DH),
+	CONSTRAINT CHITIETDONHANG_RK_MA_SP FOREIGN KEY (MA_SP) REFERENCES SANPHAM (MA_SP)
+);
+
+
+insert into CHITIETDONHANG (MA_DH, MA_SP, SOLUONG, GIA, THANHTIEN)
+values (1, 34, 1, 40000, 40000);
+insert into CHITIETDONHANG (MA_DH, MA_SP, SOLUONG, GIA, THANHTIEN)
+values (1, 13, 1, 50000, 50000);
+
+insert into CHITIETDONHANG (MA_DH, MA_SP, SOLUONG, GIA, THANHTIEN)
+values (2, 34, 1, 40000, 40000);
+insert into CHITIETDONHANG (MA_DH, MA_SP, SOLUONG, GIA, THANHTIEN)
+values (2, 13, 1, 50000, 50000);
+
+

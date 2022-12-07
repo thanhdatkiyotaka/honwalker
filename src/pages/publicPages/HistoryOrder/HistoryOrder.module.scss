@@ -1,0 +1,86 @@
+
+.inner{
+    width: 100%;
+    margin-top: 5%;
+    margin-left: 1%;
+    font-size: 1.2rem;
+    div{
+      margin: 1%;
+    }
+    display: flex;
+}
+.profileSidebar{
+    width: 25%;
+    flex-direction: column;
+    background-color: white;
+    padding-top: 2%;
+    text-align: center;
+    .wrapside{
+        text-align:left;
+        padding-top: 5%;
+    }
+}
+.wraprow{
+    padding-bottom: 5%;
+}
+.info{
+    width: 70%;
+    h3{
+        padding-left: 1%;
+    }
+}
+.orderHistory{
+    width: 100%;
+    position: relative;
+    display: flex;
+    background-color: white;
+    text-align: center;
+    .historyItem:hover{
+        color: red;
+    }
+}
+.historyItem{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.orderCart{
+    width: 100%;
+    display: inline-table;
+}
+.hisTable{
+    width: 100%;
+    background-color: white;
+    border: 1px;
+    border-color: #ced4da;
+    padding: 2%;
+    border-spacing: 2%;
+    tr{
+        width: 100%;
+    }   
+    td{
+        padding-bottom: 2%;
+    }
+    #ordTitle{
+        font-weight: bold;
+    }
+}
+
+.MA_DH{
+    width: 7.5%;
+}
+.codeAcc{
+    width: 12%;
+}
+.codeAddr{
+    width: 10%;
+}
+.time{
+    width: 20%;
+}
+.pay{
+    width: 25%;
+}
+.deli{
+    width: 18% ;
+}

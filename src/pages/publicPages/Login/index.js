@@ -33,7 +33,7 @@ function Login() {
                 email: values.email,
                 password: values.password
             }
-            axios.post('http://localhost/signup.php', sentData)
+            axios.post('http://localhost:8000/signup.php', sentData)
                 .then((result) => {
                     if (result.data === 'fail') alert('Email đã tồn tại');
                     else {
@@ -56,7 +56,7 @@ function Login() {
                 email: values.email,
                 password: values.password
             }
-            axios.post('http://localhost/login.php', sentData)
+            axios.post('http://localhost:8000/login.php', sentData)
                 .then((result) => {
                     if (result.data) {
                         localStorage.setItem('userId', result.data.id);
