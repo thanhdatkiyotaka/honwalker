@@ -2,7 +2,6 @@
 import className from 'classnames/bind';
 import Product from '../Product';
 import style from './Payment.module.scss';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React from "react";
 
@@ -103,21 +102,21 @@ class Payment extends React.Component {
                             <ul>
                                 <li>
                                     <label htmlFor="">
-                                        <img src={require("~/assets/images/zalopay.png")} alt="" />
+                                        <img src='' alt="" />
                                         Ví ZaloPay
                                         <input type="radio" name="radpay" id="" />
                                     </label>
                                 </li>
                                 <li>
                                     <label htmlFor="">
-                                        <img src={require("~/assets/images/momo.jpg")} alt="" />
+                                        <img src='' alt="" />
                                         Ví MoMo
                                         <input type="radio" name="radpay" id="" />
                                     </label>
                                 </li>
                                 <li>
                                     <label htmlFor="">
-                                        <img src={require("~/assets/images/money.jpg")} alt="" />
+                                        <img src='' alt="" />
                                         Thanh toán trực tiếp khi nhận hàng
                                         <input type="radio" name="radpay" id="" />
                                     </label>
@@ -144,7 +143,7 @@ class Payment extends React.Component {
                                         return (
                                             <tr>
                                                 <td>
-                                                    <img src={require("~/assets/images/Elaina_04.jpg")} alt="" />
+                                                    <img src={result.PHOTOURL} alt="" />
                                                 </td>
                                                 <td>{result.TEN_SP}</td>
                                                 <td>{result.SOLUONG}</td>
@@ -171,11 +170,9 @@ class Payment extends React.Component {
                                 Tổng Số Tiền (gồm VAT): <Total /> VNĐ
                             </div>
                             <hr />
-                            <Link to='/' className={cx('btPay')} >
-                                <button type='button' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }) }}>
-                                    XÁC NHẬN THANH TOÁN
-                                </button>
-                            </Link>
+                            <button type='submit'>
+                                XÁC NHẬN THANH TOÁN
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -70,5 +70,6 @@ function ListProduct() {
 export {default as Sale} from './Sale';
 export {default as BestSeller} from './BestSeller';
 export {default as NewBook} from './NewBook';
+export {default as SearchResult} from './SearchResult';
 
 export default ListProduct;

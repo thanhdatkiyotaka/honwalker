@@ -61,7 +61,7 @@ class Cart extends React.Component {
                                             return (
                                                 <tr>
                                                     <td>
-                                                        <img src={require("~/assets/images/Elaina_04.jpg")} alt="" />
+                                                        <img src={require("~/assets/images/product.jpg")} alt="" />
                                                     </td>
                                                     <td>{result.TEN_SP}</td>
                                                     <td className={cx('toSetSL')}>{result.SOLUONG}</td>
@@ -83,7 +83,7 @@ class Cart extends React.Component {
                             Tổng Số Tiền (gồm VAT):  <SummaryVAT /> VNĐ
                         </div>
                         <Link to='/payment' className={cx('btPay')} >
-                            <button type="button" onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }) }}>
+                            <button type="button">
                                 THANH TOÁN
                             </button>
                         </Link>

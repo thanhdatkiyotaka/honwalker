@@ -1,5 +1,6 @@
 import Tippy from '@tippyjs/react/headless';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 import { SearchPopper } from '~/component/popper';
@@ -10,31 +11,38 @@ import style from '../Header/Header.module.scss';
 var cx = className.bind(style)
 
 function Search() {
-    const searchResult = [
-        {name: 'Date a live',
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/vi/thumb/9/9b/Hanh_trinh_cua_Elaina_quyen_1.png/220px-Hanh_trinh_cua_Elaina_quyen_1.png',
-        price: 80000, href: ''},
-        {name: 'Date a live',
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/vi/thumb/9/9b/Hanh_trinh_cua_Elaina_quyen_1.png/220px-Hanh_trinh_cua_Elaina_quyen_1.png',
-        price: 80000, href: ''},
-        {name: 'Date a live, công cha như núi thái sơn, nghĩa mẹ như nước trong nguồn chảy ra',
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/vi/thumb/9/9b/Hanh_trinh_cua_Elaina_quyen_1.png/220px-Hanh_trinh_cua_Elaina_quyen_1.png',
-        price: 80000, href: ''}
-    ]
+    
+    const [result, setResult] = useState([]);
     const [keySearch, setKey] = useState('');
     const [show, setShow] = useState(false)
-    const handleChange = (e) => {
-        setKey(e.target.value)
-    }
+    const handleChange = (e) => {setKey(e.target.value)}
+    const debounceKey = useDebounce(keySearch, 1000);
+    useEffect(()=> {
+        if (debounceKey.trim().length < 2) {
+            setResult([]);
+            return;
+        }
+        axios.post('http://localhost/searchResult.php', {key: debounceKey})
+                .then((result) => {
+                    if (result.data === 'no result') setResult([]);
+                    else {
+                        setResult(result.data);
+                    }
+                })
+                .catch((error)=>{
+                    console.log(error);
+                })
+    },[debounceKey])
+
     return (  
         <Tippy
             interactive={true}
-            visible={show && searchResult.length}
+            visible={show && result.length > 0}
             onClickOutside={()=>setShow(false)}
             placement='bottom'
             render={attrs => (
                 <div className="box" tabIndex="-1" {...attrs}>
-                <SearchPopper searchResult={searchResult}/>
+                <SearchPopper searchResult={result} searchKey={debounceKey}/>
                 </div>
             )}>
             <div className={cx('search')}>
