@@ -23,7 +23,7 @@ function CartPopper() {
 
     useEffect(()=> {
         if (localStorage.getItem('userId')) {
-            axios.post('http://localhost/getCart.php', {key: localStorage.getItem('userId')})
+            axios.post('http://localhost:8000/getCart.php', {key: localStorage.getItem('userId')})
                 .then((result) => {
                     if (result.data === 'no result') setResult([]);
                     else {
