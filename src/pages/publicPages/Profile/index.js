@@ -1,5 +1,5 @@
 /* Trang hiển thị thông tin người dùng */
-import { useState } from "react";
+import { useState ,useRef } from "react";
 import className from "classnames/bind";
 import style from "./Profile.module.scss";
 var cx = className.bind(style);

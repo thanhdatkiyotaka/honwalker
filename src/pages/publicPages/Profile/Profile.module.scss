@@ -10,16 +10,20 @@
     }
   }
 .avt{
-  width: 350px;
+  width: 20%;
   img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
     }
+  padding-top: 2%;
+  padding-left: 6.5%;
+  align-items: center;
+  max-height: 250px;
   }
 .info{
-  width: 80%;
+  width: 70%;
   background-color: white;
   align-items: center;
   border-radius: 30px;
@@ -56,13 +60,9 @@
   }
 }
 .wrapInput{
-  position: relative;
   input{
-    margin: 0;
-    padding-left: 0;
-    position: absolute;
-    float: left;
-    align-items: left;
+    padding-left: 0%;
+    background-color: #ced4da;
   }
 }
 #submit{
